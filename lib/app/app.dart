@@ -1,3 +1,4 @@
+import 'package:flightbooking/app/router/router.dart';
 import 'package:flightbooking/src/presentation/Home/search_Screen.dart';
 import 'package:flutter/material.dart';
 
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home:  SearchScreen(),
+      onGenerateRoute: AppRouter.generateRoute,
     );
   }
 }

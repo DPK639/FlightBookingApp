@@ -18,7 +18,9 @@ class Headerimage extends StatelessWidget {
       child: Stack(
         children: [
           Container(
-            child: Image.asset("assets/TopIMG.png"),
+            color: Colors.red,
+            width: MediaQuery.of(context).size.width,
+            child: Image.asset("assets/TopIMG.png",fit: BoxFit.fill,),
           ),
           Positioned(
             top: 10,

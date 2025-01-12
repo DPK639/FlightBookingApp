@@ -62,9 +62,13 @@ class Serachflight extends StatelessWidget {
                 CircleAvatar(
                   radius: 16.0,
                   backgroundColor: Color_Icon.withAlpha(50),
-                  child: Icon(
-                    Icons.multiple_stop,
-                      color: Color_Icon,
+                  child:  Transform.rotate(
+                    alignment: Alignment.center,
+                    angle: 1.59,
+                    child: Icon(
+                      Icons.multiple_stop,
+                        color: Color_Icon,
+                    ),
                   ),
                 ),
               ],

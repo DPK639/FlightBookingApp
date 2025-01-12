@@ -1,8 +1,10 @@
 import 'package:flightbooking/app/theme/appTheme.dart';
+import 'package:flightbooking/src/domain/Core/Models/flightDetails.dart';
 import 'package:flutter/material.dart';
 
 class Detailsbody extends StatelessWidget {
-  const Detailsbody({super.key});
+  Onward ReturnData;
+   Detailsbody({super.key,required this.ReturnData});
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +20,8 @@ class Detailsbody extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("22:23",style: TextStyle(fontWeight: FontWeight.bold,fontSize: FontSize_Heading),),
-                Text("BLR - Bengaluru"),
+                Text(ReturnData.timeFrom,style: TextStyle(fontWeight: FontWeight.bold,fontSize: FontSize_Heading),),
+                Text(ReturnData.from),
               ],
             ),
           ),
@@ -34,15 +36,18 @@ class Detailsbody extends StatelessWidget {
                 children: [
                   Row(
                     children: List.generate(50, (index) => Expanded(
-                      child:index==42~/2?
-                      Icon(Icons.flight_outlined,color: Color_Icon,): Container(
+                      child:index==60~/2?
+                      Transform.rotate(
+                        alignment: Alignment.topLeft,
+                          angle: 1.59,
+                          child: Icon(Icons.flight_outlined,color: Color_Icon,)): Container(
                         color: index%2==0?Colors.transparent
                             :Colors.grey,
                         height: 1,
                       ),
                     )),
                   ),
-                  Text("4h 30m",style: TextStyle(fontSize: FontSize_Content),),
+                  Text(ReturnData.travelTime,style: TextStyle(fontSize: FontSize_Sub_Content),),
 
                 ],
               ),
@@ -54,8 +59,8 @@ class Detailsbody extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  Text("21:55",style: TextStyle(fontWeight: FontWeight.bold,fontSize: FontSize_Heading),),
-                  Text("BLR - Bengaluru"),
+                  Text(ReturnData.timeTo,style: TextStyle(fontWeight: FontWeight.bold,fontSize: FontSize_Heading),),
+                  Text(ReturnData.to),
                 ],
               ),
             ),
@@ -64,7 +69,7 @@ class Detailsbody extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: [Text("2 Stops")],)
+          children: [Text(ReturnData.stops +" Stops")],)
       ],
     );
   }

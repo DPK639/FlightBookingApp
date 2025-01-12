@@ -15,8 +15,9 @@ class Imagewithtext extends StatelessWidget {
         children: [
           Container(
             height: MediaQuery.of(context).size.height/3,
+           // width: MediaQuery.of(context).size.width/2,
 
-            child: Image.asset("$image"),),
+            child: Image.asset("$image",fit: BoxFit.fill,),),
           Positioned(bottom: 20,
               left: 20,
               child: Column(
